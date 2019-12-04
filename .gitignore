@@ -236,3 +236,4 @@ $RECYCLE.BIN/
 
 # for vscode
 *.vscode
+*.idea
