@@ -2,3 +2,18 @@
 {% block content %}
     <h2>Sign Up</h2>
 {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form method="post" novalidate>
+            {%  csrf_token %}
+            {% load widget_tweaks %}
+            {% for field in form  %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Create an User</button>
+        </form>
+    </div>
+{% endblock %}
