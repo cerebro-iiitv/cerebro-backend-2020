@@ -5,7 +5,7 @@ celery==4.3.0
 certifi==2019.11.28
 chardet==3.0.4
 defusedxml==0.6.0
-Django==3.0
+Django==3.0.2
 django-admin==2.0.0
 django-excel-response2==2.0.8
 django-six==1.0.4
@@ -17,7 +17,7 @@ importlib-metadata==1.1.0
 kombu==4.6.6
 more-itertools==8.0.0
 oauthlib==3.1.0
-Pillow==6.2.1
+Pillow==7.0
 PyJWT==1.7.1
 python3-openid==3.1.0
 pytz==2019.3
