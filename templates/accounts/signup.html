@@ -8,11 +8,7 @@
         <form method="post" novalidate>
             {%  csrf_token %}
             {% load widget_tweaks %}
-            {% for field in form  %}
-                <div class="form-group">
-                    {{ field.label_tag }}
-                </div>
-            {% endfor %}
+            {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Create an User</button>
         </form>
     </div>
