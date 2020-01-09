@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Cerebro Backend</title>
+  <title>{% block title %}Cerebro Backend{% endblock %}</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <style>
@@ -25,10 +25,13 @@
 <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 
 </head>
-
+{% block body %}
 <body class="center">
 <!--  <script src="js/scripts.js"></script> -->
-<p class="sansserif"><b>It's under development.....</b></p>
+{% block content %}
+    <p class="sansserif"><b>It's under development.....</b></p>
+{% endblock %}
 
 </body>
+{% endblock %}
 </html>
