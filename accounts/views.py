@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from accounts.forms import SignUpForm
 from django.contrib.auth import login as auth_login
+from rest_framework import generics
+
+from accounts.models import Account
+from accounts.serializers import AccountSerializers
 
 
 def index(request):
@@ -19,3 +23,13 @@ def signup(request):
         form = SignUpForm()
 
     return render(request, 'accounts/signup.html', {'form': form})
+
+
+class AccountListAPI(generics.ListAPIView):
+    lookup_field = 'pk'
+    serializer_class = AccountSerializers
+
+    def get_queryset(self):
+        return Account.objects.all()
+
+
