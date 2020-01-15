@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from accounts.forms import SignUpForm
 from django.contrib.auth import login as auth_login
 from rest_framework import generics
-
+from rest_framework.permissions import IsAuthenticated
 from accounts.models import Account
 from accounts.serializers import AccountSerializers
 
@@ -26,6 +26,7 @@ def signup(request):
 
 
 class AccountListAPI(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
     lookup_field = 'pk'
     serializer_class = AccountSerializers
 
