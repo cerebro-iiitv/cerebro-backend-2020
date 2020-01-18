@@ -25,12 +25,31 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form': form})
 
 
-class AccountListAPI(generics.ListAPIView):
+class accountListView(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
     lookup_field = 'pk'
     serializer_class = AccountSerializers
 
     def get_queryset(self):
         return Account.objects.all()
+
+
+class accountCreateView(generics.CreateAPIView):
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'pk'
+    serializer_class = AccountSerializers
+
+    def get_queryset(self):
+        return Account.objects.all()
+
+
+class accountRUDView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'pk'
+    serializer_class = AccountSerializers
+
+    def get_queryset(self):
+        return Account.objects.all()
+
 
 

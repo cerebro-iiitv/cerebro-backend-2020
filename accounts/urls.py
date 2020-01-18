@@ -5,10 +5,10 @@ from . import views
 app_name = 'accounts'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('list/', views.AccountListAPI.as_view(), name='account_api'),  # list view of users
+    path('list/', views.accountListView.as_view(), name='account_api'),  # list view of users
+    path('create/', views.accountCreateView.as_view(), name='account-create'),  # create user view
+    path('view/<int:pk>/', views.accountRUDView.as_view(), name='account-RUD'),  # RetrieveUpdateDestroyAPIView
     path('signup/', views.signup, name='signup'),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
-
-
