@@ -9,6 +9,7 @@ urlpatterns = [
     path('create/', views.accountCreateView.as_view(), name='account-create'),  # create user view
     path('view/<int:pk>/', views.accountRUDView.as_view(), name='account-RUD'),  # RetrieveUpdateDestroyAPIView
     path('signup/', views.signup, name='signup'),
+    path('optimus/', views.OptimusView.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

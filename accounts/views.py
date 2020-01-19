@@ -3,6 +3,8 @@ from accounts.forms import SignUpForm
 from django.contrib.auth import login as auth_login
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from accounts.models import Account
 from accounts.serializers import AccountSerializers
 
@@ -52,4 +54,11 @@ class accountRUDView(generics.RetrieveUpdateDestroyAPIView):
         return Account.objects.all()
 
 
+class OptimusView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        content = {
+            'message': 'Autobots, Roll Out',
+        }
+        return Response(content)
