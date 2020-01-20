@@ -7,7 +7,7 @@ Backend for CEREBRO 2020
 
 ```sh
 $ git clone https://github.com/yashshah2820/cerebro-backend-2020.git
-$ cd django-filter-product
+$ cd cerebro-backend-2020
 $ pip install -r requirements.txt
 ```
 
