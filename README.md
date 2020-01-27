@@ -32,3 +32,6 @@ After creating virtual environment
 $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
+### Authors :pencil:
+
+©️ [Web Team Cerebro](https://github.com/orgs/cerebro-iiitv/teams/web-team) :tada:
