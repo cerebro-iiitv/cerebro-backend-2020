@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'events.apps.EventsConfig',
+    'registration.apps.RegistrationConfig',
     'widget_tweaks',
     'rest_framework',
     'rest_framework.authtoken',

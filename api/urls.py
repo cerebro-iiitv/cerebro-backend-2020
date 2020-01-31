@@ -10,6 +10,8 @@ urlpatterns = [
     path('', views.landing_page, name='landing'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),  # including accounts app urls
+    path('registration/', include('registration.urls')), # including registration app urls
+    path('events/', include('events.urls')), # including events app urls
 ]
 
 if settings.DEBUG:
