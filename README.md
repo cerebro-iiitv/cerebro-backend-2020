@@ -4,8 +4,7 @@
 
 # cerebro-backend-2020
 
-
-## Development 
+## Development 🔧
 
 ## Setup
 
@@ -15,29 +14,34 @@ $ cd cerebro-backend-2020
 ```
 
 ### For setting virtual environment
+
 ```sh
 $ virtualenv venv
 ```
 
 ### For activating virtual environment in windows
+
 ```sh
 $ venv/Scripts/activate
 ```
 
 ### For activating virtual environment in Ubuntu
+
 ```sh
 $ source venv/bin/activate
 ```
 
-After creating virtual environment 
- 
+After creating virtual environment
+
 ### Start
+
 ```sh
 $ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py runserver
 ```
+
 ### Authors :pencil:
 
 ©️ [Web Team Cerebro](https://github.com/orgs/cerebro-iiitv/teams/web-team) :tada:
