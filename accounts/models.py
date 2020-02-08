@@ -36,12 +36,3 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + ' (' + self.email + ')'
-
-
-class GoogleAccount(models.Model):
-    Id = models.CharField(max_length=1000, blank=True)
-    full_name = models.CharField(max_length=100, blank=True)
-    given_name = models.CharField(max_length=100, blank=True)
-    FamilyName = models.CharField(max_length=100, blank=True)
-    image_url = models.ImageField(upload_to='profilepics/', null=True)
-    token = models.CharField(max_length=1000, blank=True)
