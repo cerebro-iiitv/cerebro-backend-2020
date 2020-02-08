@@ -11,7 +11,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
     is_active = models.BooleanField(_('active'), default=True)
     email = models.EmailField(_('email address'), unique=True)
-    profile_pic = models.ImageField(upload_to='profilepics/', null=True, blank=True)
+    profile_pic = models.ImageField(
+        upload_to='profilepics/', null=True, blank=True)
     is_staff = models.BooleanField(_('staff status'), default=False)
 
     USERNAME_FIELD = 'email'
@@ -35,4 +36,3 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + ' (' + self.email + ')'
-
