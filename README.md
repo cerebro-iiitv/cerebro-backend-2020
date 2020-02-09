@@ -19,18 +19,22 @@ $ cd cerebro-backend-2020
 $ virtualenv venv
 ```
 
-### For activating virtual environment in windows
+### For activating virtual environment in Windows
 
 ```sh
 $ venv/Scripts/activate
 ```
 
-### For activating virtual environment in Ubuntu
+### For activating virtual environment in Linux and macOS
 
 ```sh
 $ source venv/bin/activate
 ```
 
+### For deactivating virtual environment
+```sh
+$ deactivate
+```
 After creating virtual environment
 
 ### Start
