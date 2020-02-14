@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'widget_tweaks',
     'rest_framework',
-    'rest_framework.authtoken',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
