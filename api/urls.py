@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('accounts.urls')),
     # path('registration/', include('registration.urls')),
-    # path('events/', include('events.urls')),
+    path('events/', include('events.urls')),
 ]
 
 if settings.DEBUG:
