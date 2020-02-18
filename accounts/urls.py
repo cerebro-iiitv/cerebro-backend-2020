@@ -3,6 +3,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.routers import SimpleRouter, DefaultRouter
 from . import views
 
+
 router = SimpleRouter()
 router.register("accounts", views.AccountViewSet, basename='api-account')
 

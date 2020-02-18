@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/', include('accounts.urls')),
     # path('registration/', include('registration.urls')),
     path('events/', include('events.urls')),
+    path('team/', include('team.urls')),
 ]
 
 if settings.DEBUG:

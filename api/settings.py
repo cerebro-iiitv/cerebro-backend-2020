@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'events.apps.EventsConfig',
     'registration.apps.RegistrationConfig',
+    'team.apps.TeamConfig',
     'widget_tweaks',
     'rest_framework',
     'phonenumber_field',
