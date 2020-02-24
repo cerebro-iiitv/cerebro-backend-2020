@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'registration.apps.RegistrationConfig',
     'team.apps.TeamConfig',
-    'widget_tweaks',
     'rest_framework',
     'phonenumber_field',
     'django.contrib.admin',
@@ -140,11 +139,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
 
 # for media under development
 MEDIA_URL = '/media/'
