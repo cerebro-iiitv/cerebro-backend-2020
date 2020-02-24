@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,8 +32,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'events.apps.EventsConfig',
+    'registration.apps.RegistrationConfig',
+    'team.apps.TeamConfig',
     'widget_tweaks',
     'rest_framework',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,8 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
-# custom model
-AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -111,9 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ]
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ]
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.TokenAuthentication',
+    # ],
 }
 
 
@@ -144,3 +150,5 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())

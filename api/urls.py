@@ -9,9 +9,13 @@ from . import views
 urlpatterns = [
     path('', views.landing_page, name='landing'),
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),  # including accounts app urls
+    path('api/', include('accounts.urls')),
+    # path('registration/', include('registration.urls')),
+    path('events/', include('events.urls')),
+    path('team/', include('team.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
