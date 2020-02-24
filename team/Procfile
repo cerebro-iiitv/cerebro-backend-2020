@@ -1,1 +1,0 @@
-web: gunicorn cerebro-backend-2020.wsgi
