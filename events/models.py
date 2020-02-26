@@ -15,6 +15,11 @@ class Event(models.Model):
     rule3 = models.CharField(max_length=500, blank=False)
     rule4 = models.CharField(max_length=500, blank=True)
     rule5 = models.CharField(max_length=500, blank=True)
+    rule6 = models.CharField(max_length=500, blank=True)
+    rule7 = models.CharField(max_length=500, blank=True)
+    rule8 = models.CharField(max_length=500, blank=True)
+    rule9 = models.CharField(max_length=500, blank=True)
+    rule10 = models.CharField(max_length=500, blank=True)
     image = models.ImageField(upload_to='event-images/', null=True, blank=True)
 
     def __str__(self):
