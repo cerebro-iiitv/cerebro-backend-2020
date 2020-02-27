@@ -10,17 +10,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=50, blank=True)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    rule1 = models.CharField(max_length=500, blank=False)
-    rule2 = models.CharField(max_length=500, blank=False)
-    rule3 = models.CharField(max_length=500, blank=False)
-    rule4 = models.CharField(max_length=500, blank=True)
-    rule5 = models.CharField(max_length=500, blank=True)
-    rule6 = models.CharField(max_length=500, blank=True)
-    rule7 = models.CharField(max_length=500, blank=True)
-    rule8 = models.CharField(max_length=500, blank=True)
-    rule9 = models.CharField(max_length=500, blank=True)
-    rule10 = models.CharField(max_length=500, blank=True)
-    image = models.ImageField(upload_to='event-images/', null=True, blank=True)
+    pdf = models.FileField(upload_to='pdf/', null=True, blank=True)
 
     def __str__(self):
         return self.event
@@ -28,17 +18,23 @@ class Event(models.Model):
 
 class Contact(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    role = models.CharField(max_length=40)
-    phone_number = PhoneNumberField(blank=True)
+    convenor = models.CharField(max_length=100, blank=False)
+    role1 = models.CharField(max_length=40)
+    phone_number1 = PhoneNumberField(blank=True)
+
+    co_convenor1 = models.CharField(max_length=100, blank=False)
+    role2 = models.CharField(max_length=40)
+    phone_number2 = PhoneNumberField(blank=True)
+
+    co_convenor2 = models.CharField(max_length=100, blank=True)
+    role3 = models.CharField(max_length=40, blank=True)
+    phone_number3 = PhoneNumberField(blank=True)
+
+    member1 = models.CharField(max_length=100, blank=False)
+    role4 = models.CharField(max_length=40)
+
+    member2 = models.CharField(max_length=100, blank=False)
+    role5 = models.CharField(max_length=40)
 
     def __str__(self):
-        return self.name + ' (' + self.role + ')'
-
-
-class Participant(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    token = models.CharField(max_length=1000, null=True)
-
-    def __str__(self):
-        return self.token
+        return str(self.pk)
