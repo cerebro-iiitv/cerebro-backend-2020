@@ -241,3 +241,6 @@ $RECYCLE.BIN/
 *.vscode
 *.idea
 *.vs
+
+# database
+db.sqlite3
