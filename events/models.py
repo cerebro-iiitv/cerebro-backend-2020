@@ -8,8 +8,8 @@ class Event(models.Model):
     prize = models.CharField(max_length=20, blank=True)
     team_size = models.IntegerField()
     venue = models.CharField(max_length=50, blank=True)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.CharField(max_length=100, blank=False)
+    end_time = models.CharField(max_length=100, blank=False)
     pdf = models.FileField(upload_to='pdf/', null=True, blank=True)
 
     def __str__(self):
