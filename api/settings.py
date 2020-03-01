@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*54i6wa4$)k@jukjjmydy=dsf!loj7eby4yyu#0mnum329k^b$'
+SECRET_KEY = 'mein nhi bataunga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'registration.apps.RegistrationConfig',
     'team.apps.TeamConfig',
+    'corsheaders',
     'rest_framework',
     'phonenumber_field',
     'django.contrib.admin',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -109,8 +111,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # REST FRAMEWORK settings
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 25,
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.IsAuthenticated',
     # ]
@@ -119,6 +121,16 @@ REST_FRAMEWORK = {
     # ],
 }
 
+
+
+
+# cors headers
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+# CORS_ORIGIN_WHITELIST = (
+#       'http://localhost:4200',
+# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
