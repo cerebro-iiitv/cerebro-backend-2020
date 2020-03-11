@@ -10,7 +10,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=50, blank=True)
     start_time = models.CharField(max_length=100, blank=False)
     end_time = models.CharField(max_length=100, blank=False)
-    pdf = models.FileField(upload_to='pdf/', null=True, blank=True)
+    pdf = models.URLField(max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.event
@@ -38,3 +38,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+
+class Pdf(models.Model):
+    name = models.CharField(max_length=20, blank=True)
+    pdf = models.FileField(upload_to="pdfs", blank=True)
+
+    def __str__(self):
+        return self.name
