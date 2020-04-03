@@ -241,9 +241,8 @@ $RECYCLE.BIN/
 *.vscode
 *.idea
 *.vs
-<<<<<<< HEAD
 
 # database
 db.sqlite3
-=======
->>>>>>> d26fade828780dc2fda71353af3da18d1415a9dd
+
+.env
