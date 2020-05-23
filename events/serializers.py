@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from events.models import Event, Contact, Participant
+from events.models import Event, Contact
 
 
 class EventSerializers(serializers.ModelSerializer):
@@ -13,11 +13,4 @@ class ContactSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Contact
-        fields = '__all__'
-
-
-class ParticipantSerializers(serializers.ModelSerializer):
-
-    class Meta:
-        model = Participant
         fields = '__all__'
